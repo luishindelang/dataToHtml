@@ -1,16 +1,23 @@
-import Base from "../components/Base";
-import Standard from "../components/header/Standard";
+import React, { startTransition } from "react";
+import Content from "../components/Content";
 
-export default function Home() {
+export default function index() {
+  const obj = {
+    a: "1",
+    b: "2",
+    c: {
+      a: "1",
+      b: { a: { a: "1", b: "2", c: "3" }, b: "1", c: "2" },
+      c: "2",
+      d: { a: "1", b: { a: "1" } },
+    },
+  };
+
   return (
     <>
-      <div className='w-full h-screen
-                      flex justify-center items-center'>
-      
-        <h1 className='text-4xl'>NextJS with TailwindCSS</h1>
-
+      <div>
+        <Content obj={obj} />
       </div>
     </>
-    
-  )
+  );
 }
