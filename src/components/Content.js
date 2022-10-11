@@ -24,7 +24,7 @@ export default function Content({ objKey, obj }) {
                 <Content objKey={obj.indexOf(value)} obj={value} />
               ) : (
                 <div>
-                  {obj.indexOf(value)} :{value}
+                  {obj.indexOf(value)} : {value}
                 </div>
               )
             )}
@@ -32,7 +32,7 @@ export default function Content({ objKey, obj }) {
         </div>
       </>
     );
-  } else if (typeof obj == "object") {
+  } else {
     var arr = [];
     for (const [key, value] of Object.entries(obj)) {
       arr.push(key);
@@ -70,11 +70,5 @@ export default function Content({ objKey, obj }) {
         </>
       );
     }
-  } else {
-    return (
-      <>
-        <Box>{obj}</Box>
-      </>
-    );
   }
 }
